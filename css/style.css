@@ -1,0 +1,321 @@
+* {box-sizing: border-box;}
+:root {
+  --verde:#163b2b;
+  --lima:#d5ef80;
+  --papel:#f6f7f2;
+  --texto:#21372b;
+  --borda:#dbe2d8;
+}
+
+body {
+  margin:0;
+  background:var(--papel);
+  color:var(--texto);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+a {color:var(--verde); text-underline-offset:4px;}
+button,input,select {font: inherit;}
+
+button,a,input,select {touch-action:manipulation;}
+:focus-visible {outline:3px solid #b16a10; outline-offset:4px;}
+header {background:var(--verde); color:white;}
+
+.barra {
+  max-width: 1160px;
+  margin: auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.marca {
+  font-size:30px;
+  font-weight:800;
+  color:white;
+  text-decoration:none;
+  line-height:1.1;
+}
+
+.marca span {color:var(--lima);}
+.marca small {
+  display:block;
+  font-size:9px;
+  letter-spacing:1.8px;
+  margin-top:10px;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {color:white; text-decoration:none; font-size:14px;}
+nav a[aria-current],nav a:hover {color:var(--lima); text-decoration:underline;}
+
+main {
+  width:min(1160px,100%);
+  padding:48px 24px 64px;
+  margin:auto;
+  flex:1;
+}
+
+h1,h2,h3 {line-height: 1.15; letter-spacing: -.04em;}
+h1 {font-size:clamp(34px,5vw,60px); margin:12px 0 20px;}
+h2 {font-size:28px;}
+h3 {font-size:21px;}
+
+.etiqueta {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  color: #476339;
+}
+
+.introducao {
+  font-size:18px;
+  max-width:740px;
+  margin-bottom:32px;
+}
+
+.botao,button{
+  border:0;
+  border-radius:7px; background:var(--verde);
+  color:white;
+  padding:12px 20px; display:inline-block;
+  text-decoration:none;
+  cursor:pointer; font-weight:bold;
+  font-size:14px;
+}
+
+.botao:hover,button:hover {background:#28583c;}
+button:disabled {opacity: .5; cursor: not-allowed;}
+
+.hero {
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  align-items:center;
+  gap:60px;
+  margin-bottom:64px;
+}
+
+.hero h1 {font-size:clamp(42px,5.5vw,70px);}
+.hero p:not(.etiqueta) {max-width:430px;}
+.hero .botao {margin-top: 14px;}
+.hero .botao span {padding-left:30px;}
+
+.passos,.grade {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.passos article {padding:24px 0; border-top:1px solid var(--borda);}
+.passos b {color: #61794e;}
+.passos p,.cartao p {font-size:14px;}
+
+.filtro{
+  display:flex;
+  gap:12px; align-items:center;
+  flex-wrap:wrap;
+  padding:20px; background:#eaf0e2;
+  border-radius:10px;
+  margin:28px 0;
+}
+
+.filtro label {margin:0;}
+
+.filtro input,.filtro select {width: auto; max-width: 100%;}
+
+.cartao {
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.cartao-corpo {padding:24px;}
+
+.cartao h2 {font-size:24px;}
+
+.preco {font-size: 22px;}
+
+.voltar {display:inline-block; margin-bottom:24px;}
+
+.detalhes {
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.painel {
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:14px;
+  padding:32px;
+}
+
+.valor {font-size: 40px; font-weight: bold; margin: 12px 0;}
+
+dl {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+dt {font-size:13px; color:#53644f;}
+
+dd {margin:6px 0; font-weight:bold;}
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.horario {
+  background:#e9f3e3;
+  border:1px solid #a8c597;
+  border-radius:8px;
+  padding:18px;
+}
+
+.horario span {display:block; font-size:13px; margin-top:5px;}
+.indisponivel {
+  background:#eceee9;
+  border-color:#d6dad1;
+  color:#62695f;
+}
+.auth{
+  display: grid;
+  grid-template-columns: 1fr 1fr; gap: 70px;
+  align-items: start;
+  max-width: 940px; margin: 24px auto;
+}
+
+.auth h1 {font-size:48px;}
+
+.auth .painel h2 {margin-top:0;}
+
+label {
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  margin:16px 0 6px;
+}
+input,select {
+  display: block;
+  width: 100%;
+  border: 1px solid #aebca7;
+  border-radius: 6px;
+  padding: 11px;
+  background: white;
+  color: var(--texto);
+  min-width: 0;
+}
+
+.senha {display:flex; gap:8px;}
+
+.senha button {padding:8px; font-size:12px;}
+
+.auth .botao {width:100%; margin-top:20px;}
+
+.ajuda {font-size: 12px; color: #53644f;}
+
+.mensagem {
+    font-size: 14px;
+    background-color: #ffe5e5;
+    color: #8b1515;
+    border: 1px solid #d86b6b;
+    border-radius: 6px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.mensagem:empty {display:none;}
+
+footer {
+  background:var(--verde);
+  color:#e0eadb;
+  padding:28px max(24px,calc((100% - 1112px)/2));
+}
+
+footer>div {display: flex; justify-content: space-between; gap: 20px;}
+
+footer p,footer span {font-size:12px;}
+
+.pular {
+  position:absolute;
+  top:-100px;
+  left:16px;
+  background:white;
+  padding:10px;
+  z-index:10;
+}
+.pular:focus {top:10px;}
+@media(max-width:800px) {
+  .hero,.auth,.detalhes {grid-template-columns: 1fr; gap: 28px;}
+  .grade {grid-template-columns:1fr 1fr;}
+  .horarios {grid-template-columns:repeat(2,1fr);}
+  .barra {align-items:flex-start; flex-direction:column;}
+  .auth {margin: 0;}
+  
+  .hero {margin-bottom:40px;}
+}
+@media(max-width:520px) {
+  main {padding: 32px 20px;}
+  .grade,.passos {grid-template-columns:1fr;}
+  nav {gap:18px;}
+  .painel {padding:24px;}
+  .filtro {align-items: stretch; flex-direction: column;}
+  
+  .filtro input,.filtro select {width:100%;}
+  .horario {padding:12px; font-size:14px;}
+  dl {grid-template-columns:1fr;}
+  .auth h1 {font-size: 38px;}
+  footer>div {flex-direction:column; gap:4px;}
+}
+.foto-inicio{
+  display:block;
+  width:100%; height:365px;
+  object-fit:cover;
+  border-radius:18px; box-shadow:14px 14px 0 #dbe7cd;
+}
+.foto-quadra {
+  display:block;
+  width:100%;
+  height:210px;
+  object-fit:cover;
+}
+.foto-detalhe {
+  height: auto;
+  aspect-ratio: 3/2;
+  border-radius: 12px;
+}
+
+.barra nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.barra nav form {
+    margin: 0;
+}
+
+.barra nav form button {
+    display: block;
+    margin: 0;
+    font: inherit;
+}
+
+@media(max-width:800px) {
+  .foto-inicio {height: auto; aspect-ratio: 3/2;}
+}
